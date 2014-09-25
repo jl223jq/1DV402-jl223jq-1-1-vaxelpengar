@@ -1,0 +1,6 @@
+P:\repro\1DV402-jl223jq-1-1-vaxelpengar\1DV402-jl223jq-1-1-vaxelpengar\1DV402-jl223jq-1-1-vaxelpengar\bin\Debug\1DV402-jl223jq-1-1-vaxelpengar.exe.config
+P:\repro\1DV402-jl223jq-1-1-vaxelpengar\1DV402-jl223jq-1-1-vaxelpengar\1DV402-jl223jq-1-1-vaxelpengar\bin\Debug\1DV402-jl223jq-1-1-vaxelpengar.exe
+P:\repro\1DV402-jl223jq-1-1-vaxelpengar\1DV402-jl223jq-1-1-vaxelpengar\1DV402-jl223jq-1-1-vaxelpengar\bin\Debug\1DV402-jl223jq-1-1-vaxelpengar.pdb
+P:\repro\1DV402-jl223jq-1-1-vaxelpengar\1DV402-jl223jq-1-1-vaxelpengar\1DV402-jl223jq-1-1-vaxelpengar\obj\Debug\1DV402-jl223jq-1-1-vaxelpengar.csprojResolveAssemblyReference.cache
+P:\repro\1DV402-jl223jq-1-1-vaxelpengar\1DV402-jl223jq-1-1-vaxelpengar\1DV402-jl223jq-1-1-vaxelpengar\obj\Debug\1DV402-jl223jq-1-1-vaxelpengar.exe
+P:\repro\1DV402-jl223jq-1-1-vaxelpengar\1DV402-jl223jq-1-1-vaxelpengar\1DV402-jl223jq-1-1-vaxelpengar\obj\Debug\1DV402-jl223jq-1-1-vaxelpengar.pdb
