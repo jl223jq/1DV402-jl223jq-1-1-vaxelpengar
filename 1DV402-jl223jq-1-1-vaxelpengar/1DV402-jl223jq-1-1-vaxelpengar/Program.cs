@@ -17,18 +17,18 @@ namespace Vaxelpengar
         const uint Enkrona = 1;
         static void Main(string[] args)
         {
-            uint ErhålletBelopp;
-            double Totalsumma;
-            double Öresavrundning;
-            uint Avrundadtotalsumma;
-            uint Tillbaka;
-            uint AntaletFemhundralappar;
-            uint AntaletHundralappar;
-            uint AntaletFemtiolappar;
-            uint AntaletTjugor;
-            uint AntaletTior;
-            uint AntaletFemkronor;
-            uint AntaletEnkronor;
+            uint erhålletbelopp;
+            double totalsumma;
+            double oresavrundning;
+            uint avrundadtotalsumma;
+            uint tillbaka;
+            uint antaletfemhundralappar;
+            uint antalethundralappar;
+            uint antaletfemtiolappar;
+            uint antalettjugor;
+            uint antalettior;
+            uint antaletfemkronor;
+            uint antaletenkronor;
 
 
             // Här felhanterar jag de fallen då användaren skrivit in ogiltiga värden.
@@ -37,8 +37,8 @@ namespace Vaxelpengar
                 try
                 {
                     Console.Write("Ange totalsumma     : ");
-                    Totalsumma = double.Parse(Console.ReadLine());
-                    if (Totalsumma < 1)
+                    totalsumma = double.Parse(Console.ReadLine());
+                    if (totalsumma < 1)
                     {
                         Console.BackgroundColor = ConsoleColor.Red;
                         Console.WriteLine("Snåljåp! Vi accepterar inte så låga vården här.");
@@ -54,13 +54,16 @@ namespace Vaxelpengar
                     Console.ResetColor();
                 }
             }
+            
+            avrundadtotalsumma = (uint)Math.Round(totalsumma);
+
             while (true)
             {
                 try
                 {
                     Console.Write("Ange erhållet belopp: ");
-                    ErhålletBelopp = uint.Parse(Console.ReadLine());
-                    if (ErhålletBelopp < Totalsumma)
+                    erhålletbelopp = uint.Parse(Console.ReadLine());
+                    if (erhålletbelopp < avrundadtotalsumma)
                     {
                         Console.BackgroundColor = ConsoleColor.Red;
                         Console.WriteLine("Inte tillräckligt mycket betalat.");
@@ -84,62 +87,61 @@ namespace Vaxelpengar
                 }
             }
 
-            Avrundadtotalsumma = (uint)Math.Round(Totalsumma);
-            Öresavrundning = Avrundadtotalsumma - Totalsumma;
-            Tillbaka = ErhålletBelopp - Avrundadtotalsumma;
+            oresavrundning = avrundadtotalsumma - totalsumma;
+            tillbaka = erhålletbelopp - avrundadtotalsumma;
 
             // Kvittot
             Console.Write("\nKVITTO\n");
             Console.WriteLine("----------------------------");
-            Console.WriteLine("Totalt          : {0:c}", Totalsumma);
-            Console.WriteLine("Öresavrundning  : {0:c}", Öresavrundning);
-            Console.WriteLine("Att betala      : {0:c}", Avrundadtotalsumma);
-            Console.WriteLine("Kontant         : {0:c}", ErhålletBelopp);
-            Console.WriteLine("Tillbaka        : {0:c}", Tillbaka);
+            Console.WriteLine("Totalt          : {0:c}", totalsumma);
+            Console.WriteLine("Öresavrundning  : {0:c}", oresavrundning);
+            Console.WriteLine("Att betala      : {0:c}", avrundadtotalsumma);
+            Console.WriteLine("Kontant         : {0:c}", erhålletbelopp);
+            Console.WriteLine("Tillbaka        : {0:c}", tillbaka);
             Console.WriteLine("-----------------------------");
 
-            AntaletFemhundralappar = Tillbaka / Femhundra;
-            Tillbaka = Tillbaka % Femhundra;
-            AntaletHundralappar = Tillbaka / Hundra;
-            Tillbaka = Tillbaka % Hundra;
-            AntaletFemtiolappar = Tillbaka / Femtio;
-            Tillbaka = Tillbaka % Femtio;
-            AntaletTjugor = Tillbaka / Tjugo;
-            Tillbaka = Tillbaka % Tjugo;
-            AntaletTior = Tillbaka / Tio;
-            Tillbaka = Tillbaka % Tio;
-            AntaletFemkronor = Tillbaka / Femkrona;
-            Tillbaka = Tillbaka % Femkrona;
-            AntaletEnkronor = Tillbaka / Enkrona;
+            antaletfemhundralappar = tillbaka / Femhundra;
+            tillbaka = tillbaka % Femhundra;
+            antalethundralappar = tillbaka / Hundra;
+            tillbaka = tillbaka % Hundra;
+            antaletfemtiolappar = tillbaka / Femtio;
+            tillbaka = tillbaka % Femtio;
+            antalettjugor = tillbaka / Tjugo;
+            tillbaka = tillbaka % Tjugo;
+            antalettior = tillbaka / Tio;
+            tillbaka = tillbaka % Tio;
+            antaletfemkronor = tillbaka / Femkrona;
+            tillbaka = tillbaka % Femkrona;
+            antaletenkronor = tillbaka / Enkrona;
 
             // Här ser jag till att kvittot enbart skriver ut sedlarna som används.
-            if (AntaletFemhundralappar != 0)
+            if (antaletfemhundralappar != 0)
             {
-                Console.WriteLine("500-lappar      : {0}", AntaletFemhundralappar);
+                Console.WriteLine("500-lappar      : {0}", antaletfemhundralappar);
             }
-            if (AntaletHundralappar != 0)
+            if (antalethundralappar != 0)
             {
-                Console.WriteLine("100-lappar      : {0}", AntaletHundralappar);
+                Console.WriteLine("100-lappar      : {0}", antalethundralappar);
             }
-            if (AntaletFemtiolappar != 0)
+            if (antaletfemtiolappar != 0)
             {
-                Console.WriteLine("50-lappar       : {0}", AntaletFemtiolappar);
+                Console.WriteLine("50-lappar       : {0}", antaletfemtiolappar);
             }
-            if (AntaletTjugor != 0)
+            if (antalettjugor != 0)
             {
-                Console.WriteLine("20-lappar       : {0}", AntaletTjugor);
+                Console.WriteLine("20-lappar       : {0}", antalettjugor);
             }
-            if (AntaletTjugor != 0)
+            if (antalettjugor != 0)
             {
-                Console.WriteLine("10-kronor       : {0}", AntaletTior);
+                Console.WriteLine("10-kronor       : {0}", antalettior);
             }
-            if (AntaletFemkronor != 0)
+            if (antaletfemkronor != 0)
             {
-                Console.WriteLine("5-kronor        : {0}", AntaletFemkronor);
+                Console.WriteLine("5-kronor        : {0}", antaletfemkronor);
             }
-            if (AntaletEnkronor != 0)
+            if (antaletenkronor != 0)
             {
-                Console.WriteLine("1-kronor        : {0}", AntaletEnkronor);
+                Console.WriteLine("1-kronor        : {0}", antaletenkronor);
             }
         }
     }
